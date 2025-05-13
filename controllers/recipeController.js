@@ -6,7 +6,7 @@ const createRecipe = async (req, res) => {
         const user = await User.findById(req.body.author);
         const recipe = await Recipe.create(req.body);
         user.recipes.push(recipe._id);
-        user.save();
+        await user.save();
         res.redirect(`/recipes/${recipe._id}`);
     } catch (error) {
         console.error('An error has occurred creating a recipe!', error.message);
@@ -45,7 +45,7 @@ const updateRecipeById = async (req, res) => {
 const deleteRecipeById = async (req, res) => {
     try {
         await Recipe.findByIdAndDelete(req.params.id);
-        res.redirect('./recipes/confirm.ejs');
+        res.render('./recipes/confirm.ejs');
     } catch (error) {
         console.error('An error has occurred deleting a recipe!', error.message);
     }

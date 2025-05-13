@@ -10,7 +10,7 @@
 <h3>Recipes:</h3>
 <ul>
     <% user.recipes.forEach(recipe => { %>
-        <li><a href="/recipes/<%= recipes._id %>"><%= recipe.title %></a></li>
+        <li><a href="/recipe/<%= recipes._id %>"><%= recipe.title %></a></li>
     <% }) %>
 </ul>
 

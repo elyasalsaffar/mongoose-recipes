@@ -3,7 +3,7 @@
 <h2>Edit Recipe</h2>
 <form action="/recipes/<%= recipe._id %>?method=PUT" method="POST">
     <input type="text" name="title" value="<%= recipe.title %>" required>
-    <textarea name="descirption" required><%= recipe.descirption %></textarea>
+    <textarea name="description" required><%= recipe.description %></textarea>
     <input type="text" name="image" value="<%= recipe.image %>">
     <button type="submit">Update</button>
 </form>
